@@ -17,12 +17,30 @@
 # NOTE: "evaluate" works just within the FH Network! Maybe you want to use VPN.
 
 def extractEmailsFromHTML(src):
+    list = []
+    one_entry_list = []
     result = []
+    result = []
+
     #### START of my CODE ####
 
     # find with regex emails (e.g. norah*smith#edu*fh-joanneum*at )
+    # import re
+
+    import re
+    list = re.findall('[a-zA-Z0-9\*-]+#[a-z*-?]+', str(src))
+
     # repair emails (by replacing characters *, #)
     # and add those to the result (list)
+
+    for i in list:
+        if i not in one_entry_list:
+            one_entry_list.append(i)
+
+    for word in one_entry_list:
+        line = word.replace('*', '.')
+        line = line.replace('#', '@')
+        result.append(line)
 
     #### END of my CODE ####
     return result
@@ -36,6 +54,15 @@ def extractNamesFromHTML(src):
     # and add to the result (list):
     # [ ("Norah","Smith"), (...,...), (...,...) ]
 
+    import re
+    teacher_names = re.findall('<strong>(.*?)</strong>', src)
+    for name in teacher_names:
+        name = name.rsplit(" ", 1)
+    name = tuple(name)
+    result.append(name)
+
+    return result
+
     #### END of my CODE ####
     return result
 
@@ -43,8 +70,13 @@ def extractNamesFromHTML(src):
 def fileNameGenerator(year=2021, suffix="jpg", count=99):
     #### START of my CODE ####
 
+    for counter in range(1, count + 1):
+        name = "_".join([str(year), 'img', format(counter, '03d')])
+
+        yield name + "." + suffix
+
     # yield x-times something like 2018_img_005.svg ...
-    yield "TODO"
+
     #### END of my CODE ####
 
 

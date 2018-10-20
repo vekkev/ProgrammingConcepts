@@ -58,8 +58,8 @@ def extractNamesFromHTML(src):
     teacher_names = re.findall('<strong>(.*?)</strong>', src)
     for name in teacher_names:
         name = name.rsplit(" ", 1)
-    name = tuple(name)
-    result.append(name)
+        name = tuple(name)
+        result.append(name)
 
     return result
 

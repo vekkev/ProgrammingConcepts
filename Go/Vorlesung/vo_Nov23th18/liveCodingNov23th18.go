@@ -1,12 +1,3 @@
-package vo_Nov23th18
-
-import (
-	"fmt"
-	"math/rand"
-	"strconv"
-	"time"
-)
-
 // G0 "Concurrency with gofunctions and channels"
 // 24. November 2018 11:30 - 13:45 ONL 2 https://meet.lync.com/fhjoanneum-edu/lynctest10/KPL4JFMQ
 //  execute this etherpad at your computer in the terminal using:
@@ -51,16 +42,14 @@ import (
 
 // 13:35 - 13:45 Besprechung
 
-
 package main
+
 import (
-"fmt"
-"strconv"
-"time"
-"math/rand"
+	"fmt"
+	"math/rand"
+	"strconv"
+	"time"
 )
-
-
 
 func bruteforce(x int, start int, end int, channel chan int, progress chan int) {
 	fmt.Println("searching from ", start, "to", end)
@@ -73,7 +62,7 @@ func bruteforce(x int, start int, end int, channel chan int, progress chan int) 
 		// st := rand.Int(1000)
 		//time.Sleep(st* time.Millisecond)
 		if x == i {
-			fmt.Println(strconv.Itoa( x ),  "you are cracked")
+			fmt.Println(strconv.Itoa(x), "you are cracked")
 			channel <- x
 			//var temp = <-progress
 
@@ -103,8 +92,8 @@ func main() {
 	for {
 		//
 		// select {                        case v = <- c1 :
-		sum +=  <- progress
-		fmt.Println("All together 'calculated' time: ",sum)
+		sum += <-progress
+		fmt.Println("All together 'calculated' time: ", sum)
 	}
 	// Lsg folgt nächste Einheit....
 
@@ -113,7 +102,4 @@ func main() {
 	fmt.Println(answer)
 }
 
-
 // Auf Wiedersehen bis zum nächsten Mal.... schönes Wochenende...
-
-

@@ -1,4 +1,5 @@
 # Python Generators: iterator, generator, yield:
+######## Demoklausur Beispiel Nr. 1:######
 # Generator No. 1:
 
 

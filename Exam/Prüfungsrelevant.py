@@ -15,6 +15,15 @@
 # Erklärung -->
 
 
+
+
+
+
+
+
+
+
+
 # Generator No. 2
 
 # def matrno_generator2(i=100):
@@ -27,6 +36,21 @@
 # 	print(elem)
 
 # Erklärung -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #Generator No.3:
@@ -43,6 +67,17 @@
 # Erklärung -->
 
 
+
+
+
+
+
+
+
+
+
+
+
 #Generator No.4:
 
 def matrno_generator4(i=100):
@@ -55,3 +90,15 @@ for elem in matrno_generator4():
 
 
 # Erklärung -->
+
+
+
+
+
+
+
+
+
+
+
+

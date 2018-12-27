@@ -3,16 +3,16 @@
 
 
 long fibonacci(long n) {
-    long fibonacci = 0;
-    long temp = 0;
+    long fibonac = 0;
     long m = 1;
+    long temp = 0;
 
     for (int i = 0; i < n; i++){
-        temp = fibonacci;
-        fibonacci += m;
+        temp = fibonac;
+        fibonac += m;
         m = temp;
     }
-    return fibonacci;
+    return fibonac;
 
 }
 

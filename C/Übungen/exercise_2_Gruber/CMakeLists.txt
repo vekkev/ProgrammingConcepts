@@ -3,4 +3,4 @@ project(exercise_2_Gruber C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(exercise_2_Gruber main.c)
+add_executable(exercise_2_Gruber main.c ean.c)
